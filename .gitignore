@@ -1,0 +1,21 @@
+# Ignore environment files
+.env
+
+# Ignore target build files
+target/
+bin/
+build/
+
+# Ignore IDE config files
+.vscode/
+.idea/
+
+# Ignore OS system files
+.DS_Store
+
+# Ignore logs
+logs/
+*.log
+
+# Ignore dependencies
+node_modules/
