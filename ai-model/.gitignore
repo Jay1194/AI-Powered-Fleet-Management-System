@@ -1,0 +1,26 @@
+
+# Ignored files and folders
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+venv/
+.env
+.venv/
+logs/
+*.log
+*.tmp
+*.swp
+artifacts/
+data/
+checkpoints/
+*.h5
+*.pkl
+docker-compose.override.yml
+*.dockerfile
+.vscode/
+*.code-workspace
+.DS_Store
+config.json
+secrets.json
