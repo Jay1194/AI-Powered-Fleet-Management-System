@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  fleetdb:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: fleetdb
+      POSTGRES_USER: ${SPRING_DATASOURCE_USERNAME}
+      POSTGRES_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+    volumes:
+      - fleetdb_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  fleet-management:
+    build: .
+    restart: always
+    depends_on:
+      - fleetdb
+    environment:
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env  # This tells Docker to use the .env file
+
+volumes:
+  fleetdb_data:
+
