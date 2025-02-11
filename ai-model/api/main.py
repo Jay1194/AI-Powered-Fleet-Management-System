@@ -4,7 +4,7 @@ import joblib
 import numpy as np
 
 # Load trained model
-model = joblib.load("model/route_optimizer.pkl")
+model = joblib.load("artifacts/route_optimizer.pkl")
 
 # FastAPI app instance
 app = FastAPI()
